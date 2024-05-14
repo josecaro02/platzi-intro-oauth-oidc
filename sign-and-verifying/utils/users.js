@@ -12,7 +12,7 @@ const users = [
 
 export const getUser = (username, password) => {
   const user = users.find((user) => user.username === username);
-
+  console.log(users, username)
   if (!user || user.password !== password) {
     throw new Error("Invalid credentials");
   }

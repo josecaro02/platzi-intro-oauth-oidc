@@ -22,9 +22,7 @@ app.get("/private", (req, res) => {
   try {
     const token = getToken(req);
     const payload = verifyToken(token);
-
     validateExpiration(payload);
-
     res.send("I'm private");
   } catch (error) {
     res.status(401).send({ error: error.message });
